@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>emisor</title>
+		<style type="text/css" title="currentStyle" media="screen">
+			@import "css/style.css";
+		</style>
+		<script type="text/javascript" src="http://192.168.2.3:8080/socket.io/socket.io.js"></script>
+		<script>
+
+		  var socket =  io.connect('http://192.168.2.3:8080');
+
+		  function sendInfo() {
+		  	socket.emit('new', { info: document.getElementById('info').value });
+		  
+		  }
+		</script>
+
+	</head>
+	<body >
+		<textarea rows="4" cols="50" id = "info">
+ 
+		</textarea>
+		<input type = "submit" onclick = "sendInfo();" value = "enviar texto">
+	</body>
+</html>
